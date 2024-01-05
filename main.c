@@ -23,19 +23,20 @@ int FIFO_func(int order, int value){
             pnt_in++;
         }else {
             pnt_in = 0;
-
         }
+        
     }  
     if( order == 2){
-        if(cnt >0){
+        if(cnt >0){ // verifier if element exit, si non exite esco
             return q[pnt_out];
             q[pnt_out] = 0;
             cnt--;
-        }
-        if(pnt_out < max_array){
-            pnt_out++;
-        }else{
-            pnt_out = min_array;
+        
+            if(pnt_out < max_array){
+                pnt_out++;
+            }else{
+                pnt_out = min_array;
+            }
         }
     }
     if(cnt>=max_array){
